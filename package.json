@@ -1,7 +1,17 @@
 {
-  "name": "peekaboo-navbar",
+  "name": "react-peekaboo-navbar",
   "version": "0.1.0",
-  "private": true,
+  "description": "This is a React App that uses styled-components and hides on scroll up and shows on scroll down.",
+  "keywords": [
+    "react",
+    "styled-components",
+    "navbar",
+    "hiding",
+    "scroll"
+  ],
+  "homepage": "https://github.com/owner/project#readme",
+  "license": "MIT",
+  "author": "Garrett Weems <gwgraphicdesign@gmail.com> (https://glweems.com)",
   "dependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -12,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "now-build": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
