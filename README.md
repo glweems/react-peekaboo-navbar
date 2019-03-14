@@ -1,6 +1,6 @@
 # React auto-hide on scroll navbar.
 
-![demo](demo.GIF)
+![demo](https://github.com/glweems/react-peekaboo-navbar/blob/master/demo.gif)
 
 This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.
 
@@ -85,7 +85,7 @@ render() {
 
 Now let’s go ahead and add some validation to our props with `PropTypes`.
 
-```
+```js
 import PropTypes from "prop-types";
 //...
 
