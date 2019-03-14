@@ -1,21 +1,25 @@
-React auto-hide on scroll navbar.
+# React auto-hide on scroll navbar.
 
-This will create a react-component navbar that will be hidden when the user scrolls down and visable when the user scrolls up.
+![demo](demo.GIF)
 
-First what we need to do it is:
-setup
+This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.
+
+#### setup
 
 `npm install styled-components --save`
 
-1. App Component with links object
+In your `App.js` create the following constants;
 
-```javascript
+```js
 // App.js
+import Navbar from "./Navbar";
+
 const navlinks = [
   { name: "Home", to: "/" },
   { name: "About", to: "/about" },
   { name: "Contact", to: "/contact" }
 ];
+
 const brand = { name: "peekaboo", to: "home" };
 
 export default class App extends Component {
@@ -29,17 +33,12 @@ export default class App extends Component {
 }
 ```
 
-Navbar.js skelletoono
+In your `src/` folder create a `Navbar.js` file
 
-```javascript
-//Navbar.js
-import styled from "styled-components";
-import PropTypes from "prop-types";
-
+```js
 export default class Navbar extends Component {
   static propTypes = {...}
 
-Component {
   constructor(props) {...}
 
   componentDidMount() {...}
@@ -59,10 +58,39 @@ Component {
 }
 ```
 
-**configure proptypes**
+Let’s start with mapping our props to be as elements to be rendered on the page.
 
-```javascript
-static propTypes = {
+```js
+// Navbar.js
+render() {
+  const { brand, links } = this.props;
+
+  const NavLinks = () =>
+    links.map((link, index) => (
+      <a key={index} href={link.to}>
+        {link.name}
+      </a>
+    ));
+
+  return (
+    <div>
+        <a className="brand" href={brand}> {brand} </a>
+        <nav>
+          <NavLinks />
+        </nav>
+      </div>
+  );
+}
+```
+
+Now let’s go ahead and add some validation to our props with `PropTypes`.
+
+```
+import PropTypes from "prop-types";
+//...
+
+export default class Navbar extends Component {
+  static propTypes = {
     brand: PropTypes.shape({
       name: PropTypes.string.isRequired,
       to: PropTypes.string.isRequired
@@ -74,11 +102,12 @@ static propTypes = {
       })
     )
   };
+}
 ```
 
-**constructor**
+For our constructor we need to add
 
-```javascript
+```js
 constructor(props) {
     super(props);
     this.state = {
@@ -89,9 +118,9 @@ constructor(props) {
   }
 ```
 
-**c did mount & c will unm**
+We need to set the event listener after the component mounts.
 
-```javascript
+```js
 componentDidMount() {
   window.addEventListener("scroll", this.handleScroll);
 }
@@ -101,9 +130,9 @@ componentWillUnmount() {
 }
 ```
 
-**handle click**
+Now that we have a function attached to the scroll event we can set the function that will fire.
 
-```javascript
+```js
 handleScroll() {
     const { scrollPos } = this.state;
     this.setState({
@@ -113,39 +142,31 @@ handleScroll() {
   }
 ```
 
-**render links**
+Now our `show` property in the state object will show **true** if we’re scrolling up and **false** if we’re scrolling up.
 
-```javascript
+We can use a Conditional Operator on our div’s class name to toggle between `"active"` and `"hidden"`
+
+```js
 render() {
-  const {brand, links}=this.props;
-
-    const NavLinks = () =>
-      links.map((link, index) =>
-        (<a key={index} href={link.to}> {link.name} </a> ));
-
-return (
-    <div>
-      <a className="brand" href={brand.to}>
-        {brand.name}
-      </a>
-      <nav>
-        <NavLinks />
-      </nav>
-    </div>
-  );
+  return <div className={this.state.show ? "active" : "hidden"} />;
 }
 ```
 
-**add function to toggle `active` and `hidden` classes**
+Toggle between those two classes won’t do anything until we define them in our css. For that we are going to create a _styled-component_
+Replace the `div` element with our new styled-component.
 
-```javascript
-return <div className={this.state.show ? "active" : "hidden"}>{/*...*/}</div>;
-```
+```js
+import styled from "styled-components";
 
-2. Create our `StyledNavbar` component
+render() {
+...
+return (
+    <StyledNavbar className={this.state.show ? "active" : "hidden"}>
+    ...
+    </StyledNavbar>
+  );
+}
 
-```javascript
-/* Navbar.js  */
 const StyledNavbar = styled.div`
   position: fixed;
   top: 0;
@@ -170,130 +191,35 @@ const StyledNavbar = styled.div`
     font-weight: bold;
     color: white;
     font-size: 1.25rem;
-  }
-`;
+  }`;
+```
 
+Now we’re going to create a `Transition` component that will wrap our `StyledNavbar`component.
+
+```js
 render() {
-...
-return (
-    <StyledNavbar>
-    ...
-    </StyledNavbar>
-  );
-}
-```
-
-```javascript
-const Transition = styled.div`
-  .active {
-    transition: 300ms all ease-in-out 100ms;
-  }
-  .hidden {
-    transition: 300ms all ease-in-out 100ms;
-    transform: translate(0, -4rem);
-  }
-`;
-```
-
-```javascript
-//Navbar.js
-import styled from "styled-components";
-
-export default class Navbar extends Component {
-  render() {
-    const { brand, links } = this.props;
-
-    const NavLinks = () =>
-      links.map((link, index) => (
-        <a key={index} href={link.to}>
-          {link.name}
-        </a>
-      ));
-
     return (
-      <Transitiom>
-        <StyledNavbar>
-          <a className="brand" href={brand}>
-            {brand}
-          </a>
-          <nav>
-            <NavLinks />
-          </nav>
-        </StyledNavbar>
-      </Transitiom>
+      <Transition>
+        <StyledNavbar className={this.state.show ? "active" : "hidden"}>
+		...
+		</StyledNavbar>
+      </Transition>
     );
   }
-}
-```
 
-3. Add our constuctor and
-
-```javascript
-// Navbar.js
-constructor(props) {
-  super(props);
-
-  this.state = {
-    show: true,
-    scrollPos: 0
-  };
-
-  this.handleScroll = this.handleScroll.bind(this);
-}
-```
-
-4. Add our lifecycle methods.
-
-```javascript
-// Navbar.js
-componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+const Transition = styled.div`
+  .active {
+    visibility: visible;
+    transition: all 200ms ease-in;
   }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-}
-
-handleScroll() {}
-```
-
-5. Create our `handleScroll()` method.
-
-```javascript
-// Navbar.js
-handleScroll() {
-    const { scrollPos } = this.state;
-
-    this.setState({
-      scrollPos: document.body.getBoundingClientRect().top,
-      show: document.body.getBoundingClientRect().top > scrollPos
-    });
+  .hidden {
+    visibility: hidden;
+    transition: all 200ms ease-out;
+    transform: translate(0, -100%);
   }
+`;
 ```
 
-5. Attach bind to el
+There you have it!
 
-```javascript
-// Navbar.js
-return (
-  <div className={this.state.show ? "navbar" : "navbar hidden"}>
-    <nav>
-      <NavLinks />
-    </nav>
-  </div>
-);
-```
-
-6. Create `StyledNavbar` styled component
-
-```javascript
-// Navbar.js
-import "./Navbar.css";
-
-// ..
-return (
-  <div className={this.state.show ? "navbar" : "navbar hidden"}>{/* */}</div>
-);
-```
-
-7. create transition styled component.
+[[GitHub Repo] https://github.com/glweems/react-peekaboo-navbar ](#)
