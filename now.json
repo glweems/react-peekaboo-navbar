@@ -1,7 +1,7 @@
 {
   "version": 2,
   "name": "react",
-  "alias": ["react-peekaboo-navbar.now.sh"],
+  "alias": ["react-peekaboo-navbar.gwtuts.com"],
   "public": true,
   "builds": [
     {
