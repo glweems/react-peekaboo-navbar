@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "tuts",
+  "name": "react",
   "alias": ["react-peekaboo-navbar.now.sh"],
   "public": true,
   "builds": [
