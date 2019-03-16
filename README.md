@@ -1,6 +1,6 @@
 # React auto-hide on scroll navbar.
 
-![](<chrome-capture%20(1)%202.GIF>)
+![](https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif)
 
 ---
 
