@@ -1,17 +1,17 @@
 # React auto-hide on scroll navbar.
 
+![](<chrome-capture%20(1)%202.GIF>)
+
+---
+
 ![](https://avatars2.githubusercontent.com/u/48597129?s=100&u=975926e0bc8d1da9ae020e4af5925862682e516c&v=4 "gwtuts")
 
-<p align="left">
+<p align="center">
   <a href="https://react-peekaboo-navbar.gwtuts.com">Demo</a>
   ·
   <a href="https://github.com/gwtuts/react-peekaboo-navbar">GitHub Repo</a>
 </p>
-
----
-
-![](https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif "demo gif")
-
+----
 This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.
 
 #### Dependencies
