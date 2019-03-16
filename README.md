@@ -1,12 +1,26 @@
 # React auto-hide on scroll navbar.
 
-![demo](https://github.com/glweems/react-peekaboo-navbar/blob/master/demo.gif)
+![](https://avatars2.githubusercontent.com/u/48597129?s=100&u=975926e0bc8d1da9ae020e4af5925862682e516c&v=4 "gwtuts")
+
+<p align="left">
+  <a href="https://react-peekaboo-navbar.gwtuts.com">Demo</a>
+  ·
+  <a href="https://github.com/gwtuts/react-peekaboo-navbar">GitHub Repo</a>
+</p>
+
+---
+
+![](https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif "demo gif")
 
 This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.
 
-#### setup
+#### Dependencies
 
-`npm install styled-components --save`
+- styled-components
+
+```
+npm install styled-components --save
+```
 
 In your `App.js` create the following constants;
 
@@ -85,7 +99,7 @@ render() {
 
 Now let’s go ahead and add some validation to our props with `PropTypes`.
 
-```js
+```
 import PropTypes from "prop-types";
 //...
 
@@ -221,5 +235,3 @@ const Transition = styled.div`
 ```
 
 There you have it!
-
-[[GitHub Repo] https://github.com/glweems/react-peekaboo-navbar ](#)
