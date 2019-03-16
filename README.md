@@ -11,7 +11,9 @@
   ·
   <a href="https://github.com/gwtuts/react-peekaboo-navbar">GitHub Repo</a>
 </p>
-----
+
+---
+
 This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.
 
 #### Dependencies
