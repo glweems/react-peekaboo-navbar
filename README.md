@@ -1,3 +1,12 @@
+---
+path: "react-peekaboo-navbar"
+git: "react-peekaboo-navbar"
+date: "2019-03-18"
+title: "Simple navbar component using react, typescript, and styled-components."
+subtitle: "This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up."
+thumbnail: "https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif"
+---
+
 # React auto-hide on scroll navbar.
 
 ![](https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif)
