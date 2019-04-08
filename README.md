@@ -1,19 +1,17 @@
 ---
-path: "react-peekaboo-navbar"
-git: "react-peekaboo-navbar"
-date: "2019-03-18"
-title: "Simple navbar component using react, typescript, and styled-components."
-subtitle: "This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up."
-thumbnail: "https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif"
+path: /tutorials/react-peekaboo-navbar
+date: 2019-03-18
+title: 'Simple navbar component using react, typescript, and styled-components.'
+subtitle: 'This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.'
+thumbnail: https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif
+tags: ['react', 'navbar', 'component', 'styled-components']
 ---
 
 # React auto-hide on scroll navbar.
 
-![](https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/master/demo.gif)
+![](demo.gif)
 
 ---
-
-![](https://avatars2.githubusercontent.com/u/48597129?s=100&u=975926e0bc8d1da9ae020e4af5925862682e516c&v=4 "gwtuts")
 
 <p align="center">
   <a href="https://react-peekaboo-navbar.gwtuts.com">Demo</a>
@@ -21,9 +19,13 @@ thumbnail: "https://raw.githubusercontent.com/gwtuts/react-peekaboo-navbar/maste
   <a href="https://github.com/gwtuts/react-peekaboo-navbar">GitHub Repo</a>
 </p>
 
+### Final Product
+
+<iframe src="https://codesandbox.io/embed/github/gwtuts/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&view=preview&hidenavigation=1" title="react-peekaboo-navbar" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+
 ---
 
-This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.
+This will create a react-component Navbar that will be hidden when the user scrolls down and visible when the user scrolls up.
 
 #### Dependencies
 
@@ -33,27 +35,27 @@ This will create a react-component `Navbar` that will be hidden when the user sc
 npm install styled-components --save
 ```
 
-In your `App.js` create the following constants;
+In your App.js create the following constants;
 
 ```js
 // App.js
-import Navbar from "./Navbar";
+import Navbar from './Navbar'
 
 const navlinks = [
-  { name: "Home", to: "/" },
-  { name: "About", to: "/about" },
-  { name: "Contact", to: "/contact" }
-];
+  { name: 'Home', to: '/' },
+  { name: 'About', to: '/about' },
+  { name: 'Contact', to: '/contact' },
+]
 
-const brand = { name: "peekaboo", to: "home" };
+const brand = { name: 'peekaboo', to: 'home' }
 
 export default class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Navbar brand={brand} links={navlinks} />
       </div>
-    );
+    )
   }
 }
 ```
@@ -110,23 +112,23 @@ render() {
 
 Now let’s go ahead and add some validation to our props with `PropTypes`.
 
-```
-import PropTypes from "prop-types";
+```javascript
+import PropTypes from 'prop-types'
 //...
 
 export default class Navbar extends Component {
   static propTypes = {
     brand: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      to: PropTypes.string.isRequired
+      to: PropTypes.string.isRequired,
     }),
     links: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
-        to: PropTypes.string.isRequired
+        to: PropTypes.string.isRequired,
       })
-    )
-  };
+    ),
+  }
 }
 ```
 
@@ -246,3 +248,5 @@ const Transition = styled.div`
 ```
 
 There you have it!
+
+[![Edit react-peekaboo-navbar](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/gwtuts/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&view=preview)
