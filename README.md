@@ -1,5 +1,5 @@
 ---
-path: /tutorials/react-peekaboo-navbar
+path: react-peekaboo-navbar
 date: 2019-03-18
 title: 'Simple navbar component using react, typescript, and styled-components.'
 subtitle: 'This will create a react-component `Navbar` that will be hidden when the user scrolls down and visible when the user scrolls up.'
