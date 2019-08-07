@@ -17,9 +17,9 @@ tags:
 
 
 <p align="center">
-  <a href="https://react-peekaboo-navbar.gwtuts.com">Demo</a>
+  <a href="https://codesandbox.io/s/github/glweems/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&hidenavigation=1">Demo</a>
   ·
-  <a href="https://github.com/gwtuts/react-peekaboo-navbar">GitHub Repo</a>
+  <a href="https://github.com/glweems/react-peekaboo-navbar">GitHub Repo</a>
 </p>
 
 ---
@@ -36,7 +36,7 @@ npm install styled-components --save
 
 In your App.js create the following constants;
 
-```js
+```javascript
 // App.js
 import Navbar from './Navbar'
 
@@ -61,7 +61,7 @@ export default class App extends Component {
 
 In your `src/` folder create a `Navbar.js` file
 
-```js
+```javascript
 export default class Navbar extends Component {
   static propTypes = {...}
 
@@ -86,7 +86,7 @@ export default class Navbar extends Component {
 
 Let’s start with mapping our props to be as elements to be rendered on the page.
 
-```js
+```javascript
 // Navbar.js
 render() {
   const { brand, links } = this.props;
@@ -133,7 +133,7 @@ export default class Navbar extends Component {
 
 For our constructor we need to add
 
-```js
+```javascript
 constructor(props) {
     super(props);
     this.state = {
@@ -146,7 +146,7 @@ constructor(props) {
 
 We need to set the event listener after the component mounts.
 
-```js
+```javascript
 componentDidMount() {
   window.addEventListener("scroll", this.handleScroll);
 }
@@ -158,7 +158,7 @@ componentWillUnmount() {
 
 Now that we have a function attached to the scroll event we can set the function that will fire.
 
-```js
+```javascript
 handleScroll() {
     const { scrollPos } = this.state;
     this.setState({
@@ -172,7 +172,7 @@ Now our `show` property in the state object will show **true** if we’re scroll
 
 We can use a Conditional Operator on our div’s class name to toggle between `"active"` and `"hidden"`
 
-```js
+```javascript
 render() {
   return <div className={this.state.show ? "active" : "hidden"} />;
 }
@@ -181,7 +181,7 @@ render() {
 Toggle between those two classes won’t do anything until we define them in our css. For that we are going to create a _styled-component_
 Replace the `div` element with our new styled-component.
 
-```js
+```javascript
 import styled from "styled-components";
 
 render() {
@@ -222,13 +222,13 @@ const StyledNavbar = styled.div`
 
 Now we’re going to create a `Transition` component that will wrap our `StyledNavbar`component.
 
-```js
+```javascript
 render() {
     return (
       <Transition>
         <StyledNavbar className={this.state.show ? "active" : "hidden"}>
-		...
-		</StyledNavbar>
+        // ...
+        </StyledNavbar>
       </Transition>
     );
   }
@@ -252,8 +252,6 @@ There you have it!
 
 ### Final Product
 
+<iframe src="https://codesandbox.io/embed/github/glweems/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&hidenavigation=1" title="react-peekaboo-navbar" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-[![Edit react-peekaboo-navbar](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/gwtuts/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&view=preview)
-
-
-[react-peekaboo-navbar-example](embedded-codesandbox://./)
+[![Edit react-peekaboo-navbar](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/glweems/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&hidenavigation=1)
