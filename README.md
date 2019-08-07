@@ -17,7 +17,7 @@ tags:
 
 
 <p align="center">
-  <a href="https://codesandbox.io/s/github/glweems/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&hidenavigation=1">Demo</a>
+  <a href="https://codesandbox.io/s/react-peekaboo-navbar-0nsms?fontsize=14">Demo</a>
   ·
   <a href="https://github.com/glweems/react-peekaboo-navbar">GitHub Repo</a>
 </p>
@@ -252,6 +252,6 @@ There you have it!
 
 ### Final Product
 
-<iframe src="https://codesandbox.io/embed/github/glweems/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&hidenavigation=1" title="react-peekaboo-navbar" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+<iframe src="https://codesandbox.io/embed/react-peekaboo-navbar-0nsms?fontsize=14" title="react-peekaboo-navbar" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-[![Edit react-peekaboo-navbar](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/glweems/react-peekaboo-navbar/tree/master/?autoresize=1&fontsize=14&hidenavigation=1)
+[![Edit react-peekaboo-navbar](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-peekaboo-navbar-0nsms?fontsize=14)
