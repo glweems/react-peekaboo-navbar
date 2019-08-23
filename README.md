@@ -5,7 +5,7 @@ title: Simple navbar component using react, typescript, and styled-components.
 subtitle: This will create a react-component Navbar that will be hidden when the user scrolls down and visible when the user scrolls up.
 thumbnail: tbn.png
 repo: https://github.com/glweems/react-peekaboo-navbar
-codesandbox: github/glweems/gatsby-darkmode
+codesandbox: react-peekaboo-navbar-0nsms
 tags:
   - react
   - navbar
