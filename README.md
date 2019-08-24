@@ -4,13 +4,10 @@ date: 03/18/2019
 title: Simple navbar component using react, typescript, and styled-components.
 subtitle: This will create a react-component Navbar that will be hidden when the user scrolls down and visible when the user scrolls up.
 thumbnail: tbn.png
-repo: https://github.com/glweems/react-peekaboo-navbar
-codesandbox: react-peekaboo-navbar-0nsms
-git:
+codesandbox:
   - github
   - glweems
   - react-peekaboo-navbar
-  - master
 tags:
   - react
   - navbar
@@ -22,7 +19,7 @@ tags:
 
 - styled-components
 
-```
+```sh
 npm install styled-components --save
 ```
 
@@ -177,10 +174,10 @@ Replace the `div` element with our new styled-component.
 import styled from "styled-components";
 
 render() {
-...
+// ...
 return (
     <StyledNavbar className={this.state.show ? "active" : "hidden"}>
-    ...
+    // ...
     </StyledNavbar>
   );
 }
@@ -237,9 +234,3 @@ const Transition = styled.div`
   }
 `;
 ```
-
----
-
-There you have it!
-
-`--glweems`
