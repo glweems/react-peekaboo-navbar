@@ -6,27 +6,17 @@ subtitle: This will create a react-component Navbar that will be hidden when the
 thumbnail: tbn.png
 repo: https://github.com/glweems/react-peekaboo-navbar
 codesandbox: react-peekaboo-navbar-0nsms
+git:
+  - github
+  - glweems
+  - react-peekaboo-navbar
+  - master
 tags:
   - react
   - navbar
   - component
   - styled-components
 ---
-
-# React auto-hide on scroll navbar.
-
-![demo](demo.gif)
-
-
-<p align="center">
-  <a href="https://codesandbox.io/s/react-peekaboo-navbar-0nsms?fontsize=14">Demo</a>
-  ·
-  <a href="https://github.com/glweems/react-peekaboo-navbar">GitHub Repo</a>
-</p>
-
----
-
-This will create a react-component Navbar that will be hidden when the user scrolls down and visible when the user scrolls up.
 
 #### Dependencies
 
